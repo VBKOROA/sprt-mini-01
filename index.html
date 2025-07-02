@@ -3,20 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello World with Bootstrap</title>
+    <title>TEAM: CODE</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="bg-primary text-white py-3 mb-4">
+    <header class="header">
         <div class="container">
             <h1 class="mb-0">TEAM: CODE</h1>
         </div>
     </header>
     <div class="container mt-5">
-        <h1 class="text-center">Hello, world!</h1>
-        <!-- 메인 컨텐츠 영역입니다. 팀원분들 자기소개는 여기에다가 작업해주세요! -->
+        <div class="row">
+            <!-- Team Info -->
+            <div class="col-lg-4">
+                <div class="card team-info-card mb-4">
+                    <div class="card-body p-4">
+                        <h2 class="card-title">팀 목표</h2>
+                        <p class="card-text">팀원 모두 참여하여 첫 프로젝트를 잘 완성하기</p>
+                    </div>
+                </div>
+                <div class="card team-info-card">
+                    <div class="card-body p-4">
+                        <h2 class="card-title">팀 소개</h2>
+                        <p class="card-text">저희는 팀 <strong>Code</strong>입니다! 이름처럼, 우리는 단순한 개발자를 넘어 코드로 소통하고 코드로 성장하는 열정적인 사람들입니다.</p>
+                        <p class="card-text">한 명 한 명의 뛰어난 역량이 모여, <strong>Code</strong>라는 이름 아래 강력한 시너지를 발휘합니다. 밤샘 디버깅의 고통도, 새로운 기술 습득의 어려움도, 우리는 함께 머리를 맞대고 극복하며 더 나은 코드를, 더 나은 솔루션을 만들어냅니다.</p>
+                        <p class="card-text"><strong>Code</strong>는 우리가 만들어가는 모든 소프트웨어의 기반이며, 동시에 우리의 열정과 도전 정신이 담긴 상징입니다. 문제를 두려워하지 않고, 늘 새로운 것을 탐구하며, 코드로 세상을 변화시키는 팀, <strong>Code</strong>입니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Members -->
+            <div class="col-lg-8">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card team-member-card">
+                            <img src="https://placehold.co/400" class="card-img-top" alt="팀원 사진">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">팀원 1</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card team-member-card">
+                            <img src="https://placehold.co/400" class="card-img-top" alt="팀원 사진">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">팀원 2</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card team-member-card">
+                            <img src="https://placehold.co/400" class="card-img-top" alt="팀원 사진">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">팀원 3</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card team-member-card">
+                            <img src="https://placehold.co/400" class="card-img-top" alt="팀원 사진">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">팀원 4</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card team-member-card">
+                            <img src="https://placehold.co/400" class="card-img-top" alt="팀원 사진">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">팀원 5</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <footer class="bg-light text-center py-3 mt-5 border-top">
+    <footer class="footer">
         <div class="container">
             <span class="text-muted">© 2025 TEAM: CODE</span>
         </div>
