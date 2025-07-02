@@ -73,3 +73,7 @@ strong {
     font-weight: 500;
     color: #667eea;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
