@@ -54,7 +54,7 @@ body {
 }
 
 .team-member-card img {
-    border-top-left-radius: 500px;
+    border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
@@ -72,4 +72,8 @@ body {
 strong {
     font-weight: 500;
     color: #667eea;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
