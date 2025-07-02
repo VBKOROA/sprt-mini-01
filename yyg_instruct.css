@@ -1,0 +1,62 @@
+p strong {
+    font-weight: bold !important;
+    color: inherit !important;
+}
+
+/* 카드에 새로운 스타일 적용 */
+.card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+/* 카드 제목에 하단 테두리 추가 */
+.card .card-title {
+    font-weight: 700;
+    color: #333;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+/* 리스트 아이템 스타일 개선 */
+.list-group-item {
+    background-color: transparent;
+    border: 0;
+    padding: .75rem 0;
+    font-size: 1rem;
+}
+
+.list-group-item strong {
+    color: #495057;
+    display: inline-block;
+    min-width: 120px; /* 라벨 너비 고정 */
+}
+
+/* 자기소개 섹션 스타일 */
+.mt-4 h4 {
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.mt-4 p {
+    line-height: 1.7;
+    color: #555;
+}
+
+/* 버튼에 호버 효과 추가 */
+.btn-primary {
+    background-color: #667eea;
+    border-color: #667eea;
+    padding: 10px 25px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #5a67d8;
+    border-color: #5a67d8;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
