@@ -16,6 +16,36 @@ body {
     background: linear-gradient(45deg, var(--background-start), var(--background-end));
     color: var(--text-color);
     overflow-x: hidden;
+    cursor: none; /* Hide default cursor */
+}
+
+/* --- Custom Cursor --- */
+.custom-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease-out;
+}
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    transform: translate(-16px, -16px);
+    opacity: 0.5;
+    transition: all 0.3s ease-out;
+}
+.custom-cursor.hover .cursor-outline {
+    transform: translate(-16px, -16px) scale(1.5);
+    opacity: 0;
 }
 
 /* --- Navigation Bar --- */
@@ -23,11 +53,8 @@ body {
     padding: 1rem 0;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    transition: background 0.3s ease;
 }
-
 .navbar-brand {
     font-weight: 900;
     font-size: 1.75rem;
@@ -42,19 +69,21 @@ body {
     text-align: center;
     background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     color: white;
+    overflow: hidden;
 }
-
 .hero h1 {
     font-weight: 900;
     font-size: 4rem;
     text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    /* For GSAP split text animation */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
-
 .hero p {
     font-size: 1.25rem;
     font-weight: 300;
     max-width: 600px;
     margin: 1rem auto 0;
+    opacity: 0; /* Initially hidden for GSAP */
 }
 
 /* --- Section Title --- */
@@ -64,86 +93,63 @@ body {
     font-weight: 700;
     font-size: 2.5rem;
     color: var(--text-color);
+    opacity: 0; /* Initially hidden for GSAP */
 }
 
 /* --- Glassmorphism Card --- */
 .team-member-card .card {
     background: var(--card-bg);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border-radius: 16px;
     border: 1px solid var(--card-border);
     box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    height: 100%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: none; /* Use custom cursor */
+    overflow: hidden;
+    position: relative;
 }
-
-.team-member-card .card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
-}
-
 .team-member-card .card-img-top {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     height: 18rem;
     object-fit: cover;
-    object-position: center;
+    transition: transform 0.4s ease;
 }
-
+.team-member-card .card:hover .card-img-top {
+    transform: scale(1.1);
+}
 .team-member-card .card-title {
     font-weight: 700;
     color: var(--primary-color);
 }
-
-/* --- Modal --- */
-.modal-content {
-    background: var(--card-bg);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 16px;
-    border: 1px solid var(--card-border);
+.team-member-card .card-body {
+    position: relative;
+    z-index: 2;
+}
+.team-member-card .card::before { /* Glow effect */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.3), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+.team-member-card .card:hover::before {
+    opacity: 1;
 }
 
-.modal-header {
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.modal-title {
-    font-weight: 700;
-    font-size: 2rem;
-    color: var(--primary-color);
-}
-
-.modal-body .profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: var(--card-shadow);
-    border: 3px solid white;
-}
-
-.modal-body h4 {
-    font-weight: 700;
-    color: var(--secondary-color);
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.modal-body .list-group-item {
-    background: transparent;
-    border: none;
-    padding: 0.5rem 0;
-}
-
-.modal-body .list-group-item i {
-    color: var(--primary-color);
-    margin-right: 10px;
-    width: 20px;
-    text-align: center;
-}
+/* --- Modal (No changes needed) --- */
+.modal-content { background: var(--card-bg); backdrop-filter: blur(15px); border-radius: 16px; border: 1px solid var(--card-border); }
+.modal-header { border-bottom: 1px solid rgba(0,0,0,0.1); }
+.modal-title { font-weight: 700; font-size: 2rem; color: var(--primary-color); }
+.modal-body .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: var(--card-shadow); border: 3px solid white; }
+.modal-body h4 { font-weight: 700; color: var(--secondary-color); margin-top: 1.5rem; margin-bottom: 1rem; }
+.modal-body .list-group-item { background: transparent; border: none; padding: 0.5rem 0; }
+.modal-body .list-group-item i { color: var(--primary-color); margin-right: 10px; width: 20px; text-align: center; }
 
 /* --- Footer --- */
 .footer {
@@ -152,9 +158,4 @@ body {
     padding: 3rem 0;
     margin-top: 5rem;
     text-align: center;
-}
-
-/* --- AOS Animations --- */
-[data-aos] {
-    transition-property: transform, opacity;
 }
