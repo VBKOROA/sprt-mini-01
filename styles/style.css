@@ -1,82 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --background-start: #f8f9fa;
+    --background-end: #e9ecef;
+    --text-color: #212529;
+    --card-bg: rgba(255, 255, 255, 0.4);
+    --card-border: rgba(255, 255, 255, 0.6);
+    --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
 
 body {
     font-family: 'Noto Sans KR', sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40;
+    background: linear-gradient(45deg, var(--background-start), var(--background-end));
+    color: var(--text-color);
+    overflow-x: hidden;
+    cursor: none; /* Hide default cursor */
 }
 
-.header {
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 3rem 0;
-    margin-bottom: 3rem;
-    text-align: center;
+/* --- Custom Cursor --- */
+.custom-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease-out;
+}
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    transform: translate(-16px, -16px);
+    opacity: 0.5;
+    transition: all 0.3s ease-out;
+}
+.custom-cursor.hover .cursor-outline {
+    transform: translate(-16px, -16px) scale(1.5);
+    opacity: 0;
 }
 
-.header h1 {
-    font-weight: 700;
-    font-size: 3rem;
-    letter-spacing: 2px;
+/* --- Navigation Bar --- */
+.navbar {
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-
-.card {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-}
-
-.card-title {
-    font-weight: 500;
-    color: #495057;
-}
-
-.card-text {
-    color: #6c757d;
-    font-weight: 300;
-}
-
-.team-info-card .card-title {
+.navbar-brand {
+    font-weight: 900;
     font-size: 1.75rem;
-    font-weight: 700;
-    color: #343a40;
-    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+/* --- Hero Header --- */
+.hero {
+    padding: 6rem 0;
+    text-align: center;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    overflow: hidden;
+}
+.hero h1 {
+    font-weight: 900;
+    font-size: 4rem;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    /* For GSAP split text animation */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.hero p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 1rem auto 0;
+    opacity: 0; /* Initially hidden for GSAP */
+}
+
+/* --- Section Title --- */
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    opacity: 0; /* Initially hidden for GSAP */
+}
+
+/* --- Glassmorphism Card --- */
+.team-member-card {
+    perspective: 1000px; /* 3D 효과를 위한 원근감 추가 */
+}
+
+.team-member-card .card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease-out; /* 부드러운 전환 효과 */
+    cursor: none; /* Use custom cursor */
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d; /* 3D 공간 활성화 */
+}
+.team-member-card .card-img-top {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    height: 18rem;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.team-member-card .card:hover .card-img-top {
+    transform: scale(1.05) translateZ(20px); /* 호버 시 이미지에 미세한 3D 효과 */
+}
 .team-member-card .card-title {
     font-weight: 700;
+    color: var(--primary-color);
+    transform: translateZ(50px); /* 텍스트에 깊이감 추가 */
+}
+.team-member-card .card-text {
+    transform: translateZ(30px); /* 텍스트에 깊이감 추가 */
+}
+.team-member-card .card-body {
+    position: relative;
+    z-index: 2;
+    transform: translateZ(20px); /* 카드 콘��츠를 앞으로 이동 */
+}
+/* 기존 마우스 오버 효과는 JS로 대체하므로 제거 */
+.team-member-card .card::before { 
+    content: none;
+}
+.team-member-card .card:hover::before {
+    opacity: 0;
 }
 
-.team-member-card img {
-    width: 100%;
-    height: 14rem;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
+/* --- Modal (No changes needed) --- */
+.modal-content { background: var(--card-bg); backdrop-filter: blur(15px); border-radius: 16px; border: 1px solid var(--card-border); }
+.modal-header { border-bottom: 1px solid rgba(0,0,0,0.1); }
+.modal-title { font-weight: 700; font-size: 2rem; color: var(--primary-color); }
+.modal-body .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: var(--card-shadow); border: 3px solid white; }
+.modal-body h4 { font-weight: 700; color: var(--secondary-color); margin-top: 1.5rem; margin-bottom: 1rem; }
+.modal-body .list-group-item { background: transparent; border: none; padding: 0.5rem 0; }
+.modal-body .list-group-item i { color: var(--primary-color); margin-right: 10px; width: 20px; text-align: center; }
 
+/* --- Footer --- */
 .footer {
-    background-color: #ffffff;
-    padding: 2rem 0;
-    margin-top: 4rem;
-    border-top: 1px solid #e9ecef;
-}
-
-.footer .text-muted {
-    color: #6c757d !important;
-}
-
-strong {
-    font-weight: 500;
-    color: #667eea;
-}
-
-::-webkit-scrollbar {
-    display: none;
+    background-color: #343a40;
+    color: white;
+    padding: 3rem 0;
+    margin-top: 5rem;
+    text-align: center;
 }

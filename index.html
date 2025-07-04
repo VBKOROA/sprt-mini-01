@@ -1,127 +1,302 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TEAM: CODE</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <h1 class="mb-0">TEAM: CODE</h1>
-      </div>
-    </header>
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="card team-info-card mb-4">
-            <div class="card-body p-4">
-              <h2 class="card-title">팀 목표</h2>
-              <p class="card-text">
-                팀원 모두 참여하여 첫 프로젝트를 잘 완성하기
-              </p>
-            </div>
-          </div>
-          <div class="card team-info-card">
-            <div class="card-body p-4">
-              <h2 class="card-title">팀 소개</h2>
-              <p class="card-text">
-                저희는 팀 <strong>Code</strong>입니다! 이름처럼, 우리는 단순한
-                개발자를 넘어 코드로 소통하고 코드로 성장하는 열정적인
-                사람들입니다.
-              </p>
-              <p class="card-text">
-                한 명 한 명의 뛰어난 역량이 모여, <strong>Code</strong>라는 이름
-                아래 강력한 시너지를 발휘합니다. 밤샘 디버깅의 고통도, 새로운
-                기술 습득의 어려움도, 우리는 함께 머리를 맞대고 극복하며 더 나은
-                코드를, 더 나은 솔루션을 만들어냅니다.
-              </p>
-              <p class="card-text">
-                <strong>Code</strong>는 우리가 만들어가는 모든 소프트웨어의
-                기반이며, 동시에 우리의 열정과 도전 정신이 담긴 상징입니다.
-                문제를 두려워하지 않고, 늘 새로운 것을 탐구하며, 코드로 세상을
-                변화시키는 팀, <strong>Code</strong>입니다.
-              </p>
-            </div>
-          </div>
-        </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEAM: CODE - 우리의 열정과 코드</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
-        <div class="col-lg-8 mt-4 mt-lg-0">
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <a
-                href="jiho_introduce.html"
-                style="text-decoration: none; color: inherit"
-              >
-                <div class="card team-member-card">
-                  <img
-                    src="https://ca.slack-edge.com/T088AB0N865-U0924TNG5H7-e667aaebfa12-512"
-                    class="card-img-top"
-                    alt="팀원 사진"
-                  />
-                  <div class="card-body text-center">
-                    <h5 class="card-title">이지호</h5>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col">
-              <a
-                href="byeongsu.html"
-                style="text-decoration: none; color: inherit"
-              >
-                <div class="card team-member-card">
-                  <img src="imgs/김병수.png" class="card-img-top" alt="팀원 사진" />
-                  <div class="card-body text-center">
-                    <h5 class="card-title">김병수</h5>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col">
-              <a
-                href="yyg_intro.html"
-                style="text-decoration: none; color: inherit"
-              >
-                <div class="card team-member-card">
-                  <img
-                    src="imgs/yuyoungguan.png"
-                    class="card-img-top"
-                    alt="팀원 사진"
-                  />
-                  <div class="card-body text-center">
-                    <h5 class="card-title">유영관</h5>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col">
-              <a
-                href="team_member1.html"
-                style="text-decoration: none; color: inherit"
-              >
-                <div class="card team-member-card">
-                  <img src="imgs/이은진.jpg" class="card-img-top" alt="팀원 사진" />
-                  <div class="card-body text-center">
-                    <h5 class="card-title">이은진</h5>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
     </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TEAM: CODE</a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="main-title">코드로 세상을 움직이는 우리</h1>
+            <p class="subtitle">
+                우리는 단순한 개발자를 넘어, 코드로 소통하고 함께 성장하는 열정적인 팀입니다.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mt-5 pt-5">
+        <!-- Team Members Section -->
+        <section id="team-members">
+            <h2 class="section-title">팀원 소개</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <!-- 이지호 -->
+                <div class="col">
+                    <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#jihoModal">
+                        <div class="card">
+                            <img src="https://ca.slack-edge.com/T088AB0N865-U0924TNG5H7-e667aaebfa12-512" class="card-img-top" alt="이지호 님 사진" />
+                            <div class="card-body text-center">
+                                <h5 class="card-title">이지호</h5>
+                                <p class="card-text">Backend Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 김병수 -->
+                <div class="col">
+                    <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#byeongsuModal">
+                        <div class="card">
+                            <img src="imgs/김병수.png" class="card-img-top" alt="김병수 님 사진" />
+                            <div class="card-body text-center">
+                                <h5 class="card-title">김병수</h5>
+                                <p class="card-text">Frontend Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 유영관 -->
+                <div class="col">
+                    <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#yeonggwanModal">
+                        <div class="card">
+                            <img src="imgs/yuyoungguan.png" class="card-img-top" alt="유영관 님 사진" />
+                            <div class="card-body text-center">
+                                <h5 class="card-title">유영관</h5>
+                                <p class="card-text">Full-stack Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 이은진 -->
+                <div class="col">
+                    <div class="team-member-card" data-bs-toggle="modal" data-bs-target="#eunjinModal">
+                        <div class="card">
+                            <img src="imgs/이은진.jpg" class="card-img-top" alt="이은진 님 사진" />
+                            <div class="card-body text-center">
+                                <h5 class="card-title">이은진</h5>
+                                <p class="card-text">Project Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
-      <div class="container">
-        <span class="text-muted">© 2025 TEAM: CODE</span>
-      </div>
+        <div class="container">
+            <p class="mb-0">&copy; 2025 TEAM: CODE. All Rights Reserved.</p>
+        </div>
     </footer>
+
+    <!-- Modals (Structure remains the same) -->
+    <!-- 이지호 Modal -->
+    <div class="modal fade" id="jihoModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Profile</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="row align-items-center"><div class="col-md-4 text-center"><img src="https://ca.slack-edge.com/T088AB0N865-U0924TNG5H7-e667aaebfa12-512" class="profile-img" alt="이지호 님 사진"></div><div class="col-md-8"><h2>이지호</h2><ul class="list-group list-group-flush"><li class="list-group-item"><i class="fa-solid fa-brain"></i><strong>MBTI:</strong> INTJ</li><li class="list-group-item"><i class="fa-solid fa-star"></i><strong>장점:</strong> 성실함</li><li class="list-group-item"><i class="fa-solid fa-people-group"></i><strong>협업 스타일:</strong> 열심히 꾸준히 하겠습니다.</li></ul><h4 class="mt-4">자기소개</h4><p>안녕하세요! 팀 CODE의 이지호입니다. 아직 처음이라 미숙한 부분이 많습니다. 얼른 열심히 성장하여 프로젝트를 잘 하고 싶습니다.</p></div></div></div></div></div></div>
+    <!-- 김병수 Modal -->
+    <div class="modal fade" id="byeongsuModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Profile</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="row align-items-center"><div class="col-md-4 text-center"><img src="imgs/김병수.png" class="profile-img" alt="김병수 님 사진"></div><div class="col-md-8"><h2>김병수</h2><ul class="list-group list-group-flush"><li class="list-group-item"><i class="fa-solid fa-brain"></i><strong>MBTI:</strong> ISFJ</li><li class="list-group-item"><i class="fa-solid fa-star"></i><strong>장점:</strong> 맡은 역할을 끝까지 책임집니다!</li><li class="list-group-item"><i class="fa-solid fa-people-group"></i><strong>협업 스타일:</strong> 모르는 부분은 바로 질문하고, 공유하는 것을 중요하게 생각합니다.</li></ul><h4 class="mt-4">자기소개</h4><p>안녕하세요! 팀 CODE의 김병수입니다. 이번이 처음이라 모르는 것이 많습니다. 열심히 배우겠습니다. 잘 부탁드립니다!!</p></div></div></div></div></div></div>
+    <!-- 유영관 Modal -->
+    <div class="modal fade" id="yeonggwanModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Profile</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="row align-items-center"><div class="col-md-4 text-center"><img src="imgs/yuyoungguan.png" class="profile-img" alt="유영관 님 사진"></div><div class="col-md-8"><h2>유영관</h2><ul class="list-group list-group-flush"><li class="list-group-item"><i class="fa-solid fa-brain"></i><strong>MBTI:</strong> INTP</li><li class="list-group-item"><i class="fa-solid fa-star"></i><strong>장점:</strong> 활발함 / 집중력 / 책임감</li><li class="list-group-item"><i class="fa-solid fa-link"></i><strong>GitHub:</strong> <a href="https://github.com/VBKOROA" target="_blank">VBKOROA</a></li></ul><h4 class="mt-4">자기소개</h4><p>안녕하세요! 팀 CODE의 유영관입니다. 어릴때 부터 코딩과 친구를 먹어 벌써 15년차 죽마고우입니다. 그러나 여전히 코딩이 어렵게만 느껴집니다 ㅠㅠ 이번 스파르타 교육 및 여러분들과의 협업을 통하여 더욱 발전해가는 모습을 보여드리도록 하겠습니다!</p></div></div></div></div></div></div>
+    <!-- 이은진 Modal -->
+    <div class="modal fade" id="eunjinModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Profile</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="row align-items-center"><div class="col-md-4 text-center"><img src="imgs/이은진.jpg" class="profile-img" alt="이은진 님 사진"></div><div class="col-md-8"><h2>이은진</h2><ul class="list-group list-group-flush"><li class="list-group-item"><i class="fa-solid fa-brain"></i><strong>MBTI:</strong> ENFJ</li><li class="list-group-item"><i class="fa-solid fa-star"></i><strong>장점:</strong> 긍정적인 마인드</li><li class="list-group-item"><i class="fa-solid fa-people-group"></i><strong>협업 스타일:</strong> 원활한 의사소통</li></ul><h4 class="mt-4">자기소개</h4><p>안녕하세요! 팀 CODE의 이은진입니다. 스파르타를 통해 함께 성장하며, 개발자로서 첫걸음을 내딛고 싶습니다. 열심히 하겠습니다. 잘 부탁드립니다!</p></div></div></div></div></div></div>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+    
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Animation Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. Custom Cursor Animation
+        const cursor = document.querySelector('.custom-cursor');
+        const cursorDot = cursor.querySelector('.cursor-dot');
+        const cursorOutline = cursor.querySelector('.cursor-outline');
+        
+        window.addEventListener('mousemove', e => {
+            const { clientX: x, clientY: y } = e;
+            gsap.to(cursor, {
+                x: x,
+                y: y,
+                duration: 0.2,
+                ease: 'power2.out'
+            });
+        });
+
+        document.querySelectorAll('a, .team-member-card').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // 2. Hero Section Animation
+        const hero = document.querySelector('.hero');
+        const mainTitle = document.querySelector('.main-title');
+        const text = mainTitle.textContent;
+        mainTitle.innerHTML = ''; // Clear original text
+
+        text.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.className = 'char';
+            span.style.display = 'inline-block';
+            span.textContent = char;
+            if (char === ' ') span.style.width = '1rem';
+            mainTitle.appendChild(span);
+        });
+        
+        const chars = mainTitle.querySelectorAll('.char');
+
+        gsap.set(chars, { y: 115 });
+        gsap.set('.subtitle', { opacity: 0, y: 20 });
+
+        gsap.timeline({ delay: 0.2 })
+            .to(chars, {
+                y: 0,
+                stagger: 0.03,
+                duration: 0.8,
+                ease: 'power3.out'
+            })
+            .to('.subtitle', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.5');
+
+        // Hero Parallax Effect
+        hero.addEventListener('mousemove', e => {
+            const { clientX, clientY } = e;
+            const xPercent = (clientX / window.innerWidth - 0.5) * 2;
+            const yPercent = (clientY / window.innerHeight - 0.5) * 2;
+
+            gsap.to(chars, {
+                x: i => i * 2 * xPercent,
+                y: i => i * 1.5 * yPercent,
+                rotateY: 10 * xPercent,
+                ease: 'power1.out',
+                duration: 0.5,
+                stagger: 0.01
+            });
+        });
+
+        // 3. Scroll-triggered Animations
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '#team-members',
+                start: 'top 80%',
+                end: 'bottom top',
+            }
+        });
+
+        tl.to('.section-title', {
+            opacity: 1,
+            y: -20,
+            duration: 0.8,
+            ease: 'power3.out'
+        })
+        .from('.team-member-card', {
+            opacity: 0,
+            y: 100,
+            rotation: -5,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: 'power3.out'
+        }, '-=0.5');
+
+        // 4. 3D Card Tilt Effect
+        const cards = document.querySelectorAll('.team-member-card');
+        cards.forEach(cardWrapper => {
+            const card = cardWrapper.querySelector('.card');
+            const intensity = 15; // 기울기 강도
+
+            cardWrapper.addEventListener('mousemove', e => {
+                const rect = cardWrapper.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const rotateX = (y / rect.height - 0.5) * -intensity;
+                const rotateY = (x / rect.width - 0.5) * intensity;
+
+                gsap.to(card, {
+                    rotationX: rotateX,
+                    rotationY: rotateY,
+                    scale: 1.05,
+                    ease: 'power2.out',
+                    duration: 0.4
+                });
+            });
+
+            cardWrapper.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    rotationX: 0,
+                    rotationY: 0,
+                    scale: 1,
+                    ease: 'elastic.out(1, 0.3)',
+                    duration: 1
+                });
+            });
+        });
+
+        // 5. Dynamic Modal Animation
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('show.bs.modal', event => {
+                const modalDialog = event.target.querySelector('.modal-dialog');
+                const profileImg = event.target.querySelector('.profile-img');
+                const title = event.target.querySelector('h2');
+                const listItems = event.target.querySelectorAll('.list-group-item');
+                const subHeading = event.target.querySelector('h4');
+                const paragraph = event.target.querySelector('p:last-of-type');
+
+                gsap.set(modalDialog, { y: -50, opacity: 0 });
+                gsap.set([profileImg, title, listItems, subHeading, paragraph], { opacity: 0, y: 20 });
+
+                const tl = gsap.timeline();
+                tl.to(modalDialog, {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: 'power3.out'
+                }).to([profileImg, title], {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.1,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                }, "-=0.2")
+                .to(listItems, {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.08,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                }, "-=0.2")
+                .to([subHeading, paragraph], {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.1,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                }, "-=0.2");
+            });
+        });
+    });
+    </script>
+</body>
 </html>
