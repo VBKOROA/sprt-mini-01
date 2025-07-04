@@ -205,15 +205,37 @@
             ease: 'power3.out'
         }, '-=0.5');
 
-        // 4. Card Hover Glow Effect
-        const cards = document.querySelectorAll('.team-member-card .card');
-        cards.forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
+        // 4. 3D Card Tilt Effect
+        const cards = document.querySelectorAll('.team-member-card');
+        cards.forEach(cardWrapper => {
+            const card = cardWrapper.querySelector('.card');
+            const intensity = 15; // 기울기 강도
+
+            cardWrapper.addEventListener('mousemove', e => {
+                const rect = cardWrapper.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
+                
+                const rotateX = (y / rect.height - 0.5) * -intensity;
+                const rotateY = (x / rect.width - 0.5) * intensity;
+
+                gsap.to(card, {
+                    rotationX: rotateX,
+                    rotationY: rotateY,
+                    scale: 1.05,
+                    ease: 'power2.out',
+                    duration: 0.4
+                });
+            });
+
+            cardWrapper.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    rotationX: 0,
+                    rotationY: 0,
+                    scale: 1,
+                    ease: 'elastic.out(1, 0.3)',
+                    duration: 1
+                });
             });
         });
     });
