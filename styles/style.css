@@ -54,6 +54,8 @@ body {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transform: translateY(-100%); /* Initially hidden for animation */
+    opacity: 0;
 }
 .navbar-brand {
     font-weight: 900;
@@ -160,4 +162,6 @@ body {
     padding: 3rem 0;
     margin-top: 5rem;
     text-align: center;
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateY(50px);
 }
