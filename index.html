@@ -146,7 +146,8 @@
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
         });
 
-        // 2. Hero Section Animation (Manual SplitText)
+        // 2. Hero Section Animation
+        const hero = document.querySelector('.hero');
         const mainTitle = document.querySelector('.main-title');
         const text = mainTitle.textContent;
         mainTitle.innerHTML = ''; // Clear original text
@@ -156,16 +157,14 @@
             span.className = 'char';
             span.style.display = 'inline-block';
             span.textContent = char;
-            if (char === ' ') {
-                span.style.width = '1rem';
-            }
+            if (char === ' ') span.style.width = '1rem';
             mainTitle.appendChild(span);
         });
         
         const chars = mainTitle.querySelectorAll('.char');
 
-        gsap.set(chars, { y: 115 }); // Set initial position with GSAP
-        gsap.set('.subtitle', { opacity: 0, y: 20 }); // Set initial position for subtitle
+        gsap.set(chars, { y: 115 });
+        gsap.set('.subtitle', { opacity: 0, y: 20 });
 
         gsap.timeline({ delay: 0.2 })
             .to(chars, {
@@ -180,6 +179,22 @@
                 duration: 0.8,
                 ease: 'power3.out'
             }, '-=0.5');
+
+        // Hero Parallax Effect
+        hero.addEventListener('mousemove', e => {
+            const { clientX, clientY } = e;
+            const xPercent = (clientX / window.innerWidth - 0.5) * 2;
+            const yPercent = (clientY / window.innerHeight - 0.5) * 2;
+
+            gsap.to(chars, {
+                x: i => i * 2 * xPercent,
+                y: i => i * 1.5 * yPercent,
+                rotateY: 10 * xPercent,
+                ease: 'power1.out',
+                duration: 0.5,
+                stagger: 0.01
+            });
+        });
 
         // 3. Scroll-triggered Animations
         const tl = gsap.timeline({
