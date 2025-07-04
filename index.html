@@ -253,6 +253,49 @@
                 });
             });
         });
+
+        // 5. Dynamic Modal Animation
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('show.bs.modal', event => {
+                const modalDialog = event.target.querySelector('.modal-dialog');
+                const profileImg = event.target.querySelector('.profile-img');
+                const title = event.target.querySelector('h2');
+                const listItems = event.target.querySelectorAll('.list-group-item');
+                const subHeading = event.target.querySelector('h4');
+                const paragraph = event.target.querySelector('p:last-of-type');
+
+                gsap.set(modalDialog, { y: -50, opacity: 0 });
+                gsap.set([profileImg, title, listItems, subHeading, paragraph], { opacity: 0, y: 20 });
+
+                const tl = gsap.timeline();
+                tl.to(modalDialog, {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: 'power3.out'
+                }).to([profileImg, title], {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.1,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                }, "-=0.2")
+                .to(listItems, {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.08,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                }, "-=0.2")
+                .to([subHeading, paragraph], {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.1,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                }, "-=0.2");
+            });
+        });
     });
     </script>
 </body>
